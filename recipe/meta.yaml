@@ -1,5 +1,5 @@
 {% set name = "audio-separator" %}
-{% set version = "0.13.1" %}
+{% set version = "0.14.4" %}
 
 {% set cuda_enabled = false %}
 {% set cuda_enabled = cuda_compiler_version != "None" %}  # [linux64]
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/audio_separator-{{ version }}.tar.gz
-  sha256: d611d1d10884a11ef887c6cb1f28a7ceffaaebf32290d1748547e7ac2e8711c1
+  sha256: 7627c5e1c809061abaee4a527d82d3e5a7bbb1cafe07a2f2ece89e482837e456
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - python >=3.9
     - requests >=2
     - numpy >=1.23
-    - librosa >=0.9
+    - librosa >=0.10
     - six >=1.16
     - pydub >=0.25
     - pytorch
@@ -41,12 +41,12 @@ requirements:
     - onnx >=1.14
     - onnxruntime =*=*{{ build_ext }}
     - onnx2torch
+    - tqdm
 
 test:
   imports:
     - audio_separator
   commands:
-    - pip check
     - audio-separator --help
   requires:
     - pip
