@@ -1,5 +1,5 @@
 {% set name = "audio-separator" %}
-{% set version = "0.15.3" %}
+{% set version = "0.16.0" %}
 
 {% set cuda_enabled = false %}
 {% set cuda_enabled = cuda_compiler_version != "None" %}  # [linux64]
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/audio_separator-{{ version }}.tar.gz
-  sha256: e66bca69c29ae7a09f7cc42bfd1446b3b1251f9c0937068d6003160c6aa7bd6a
+  sha256: 4f50a5e16276d86e5bdfcfe6dd67145f3d3fe1385a45b7790309d7a8e72b4c77
 
 build:
   number: 0
