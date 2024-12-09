@@ -1,5 +1,5 @@
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -9,9 +9,8 @@ cuda_compiler:
 cuda_compiler_version:
 - '11.8'
 docker_image:
-- quay.io/condaforge/linux-anvil-cuda:11.8
+- quay.io/condaforge/linux-anvil-x86_64-cuda11.8:ubi8
 zip_keys:
-- - cdt_name
-  - cuda_compiler
+- - cuda_compiler
   - cuda_compiler_version
   - docker_image
