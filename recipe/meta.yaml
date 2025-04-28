@@ -14,7 +14,7 @@ source:
   sha256: b9174e42cead330757f76db3048afb1bed0f05d7bc3d59eb4d9527e1febeb99b
 
 build:
-  number: 0
+  number: 1
   noarch: python
   string: {{ build_ext }}
   entry_points:
@@ -26,11 +26,11 @@ requirements:
     # this adds matching cuda requirement to pytorch using __cuda package
     - {{ compiler('cuda') }}  # [linux64 and cuda_compiler_version != "None"]
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - requests >=2
     - numpy >=1.23
     - librosa >=0.10
@@ -50,6 +50,7 @@ test:
     - audio-separator --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/karaokenerds/python-audio-separator
